@@ -65,7 +65,7 @@ console.log(ratingList);
 // TODO: Map the Users array into an array of string descriptions:
 // [{ name: "anatoly", rating: 2848 }, {}, {}] -> ['name: anatoly rating: 2848', ...]
 console.log('6 -------');
-const usersFullList = users.map(function (user) {
+const usersFullList = users.map((user) => {
   return `Name: ${user.name} Rating: ${user.rating}`;
 });
 console.log(usersFullList);
@@ -128,9 +128,8 @@ console.log(sum);
 // as the name and value as the rating. For example:
 // [{ name: "anatoly", rating: 2848 }, {}, {}] -> { 'anatoly': 2848, 'bobby': 2785, 'carlsen': 2882 }
 console.log('12 -------');
-const usersObj = users.reduce((acc, name, rating) => {
-  acc[rating] = name;
-  return acc;
+const usersObj = users.reduce((obj, name, rating) => {
+  return { ...obj, [rating]: name };
 }, {});
 console.log(usersObj);
 // ----------------------------------------------------------
